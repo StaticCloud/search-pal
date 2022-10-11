@@ -1,11 +1,24 @@
-interface jobItem {
+import styled from 'styled-components'
+import Job from './Job';
+
+const ContentWrapper = styled.div`
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+`;
+
+interface JobItem {
     name: String;
     description: String;
 }
 
-interface jobArray extends Array<jobItem>{}
+interface JobArray extends Array<JobItem>{}
 
-const dummyData: jobArray = [
+const dummyData: JobArray = [
+    {
+        name: 'foo',
+        description: 'bar'
+    },
     {
         name: 'foo',
         description: 'bar'
@@ -14,9 +27,9 @@ const dummyData: jobArray = [
 
 const Content = () => {
     return (
-        <div>
-            {dummyData.map(job => <div>{job.name}</div>)}
-        </div>
+        <ContentWrapper>
+            {dummyData.map(job => <Job></Job>)}
+        </ContentWrapper>
     );
 }
 
