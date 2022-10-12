@@ -21,7 +21,21 @@ const Strike = styled.div<Strike>`
     border-${props => props.direction}: 3px solid rgb(191, 191, 191);
 `
 
-const Plus = styled.div``;
+const Plus = styled.div<{ direction: 'horizontal' | 'vertical'}>`
+    position: absolute;
+    background-color: rgb(191, 191, 191);
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    ${props => props.direction === 'vertical' ?
+        `width: 10px;
+        height: 40px;` :
+        `width: 40px;
+        height: 10px;`
+    }
+`;
 
 const JobWrapper = styled.div`
     width: 310px;
@@ -34,6 +48,9 @@ const JobWrapper = styled.div`
 const Job = () => {
     return (
         <JobWrapper>
+            <Plus direction="horizontal"></Plus>
+            <Plus direction="vertical"></Plus>
+
             <Strike direction={'top'}></Strike>
             <Strike direction={'left'}></Strike>
 
