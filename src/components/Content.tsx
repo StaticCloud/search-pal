@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Job from './Job';
+import NewJob from './NewJob';
 
 const ContentWrapper = styled.div`
     margin: 20px;
@@ -28,7 +28,7 @@ const dummyData: JobArray = [
 const Content = () => {
     return (
         <ContentWrapper>
-            {dummyData.map(job => <Job></Job>)}
+            {dummyData.map(job => <NewJob></NewJob>)}
         </ContentWrapper>
     );
 }
