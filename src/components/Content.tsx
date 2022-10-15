@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import NewJob from './NewJob';
+import { JobArray } from '../utils/Interfaces';
 import Job from './Job';
 
 const ContentWrapper = styled.div`
@@ -7,17 +8,6 @@ const ContentWrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
 `;
-
-interface JobItem {
-    name: String;
-    company: String;
-    description: String;
-    status: 'applied' | 'interviewing' | 'rejected';
-    contacted: boolean;
-    researched: boolean;
-}
-
-interface JobArray extends Array<JobItem>{}
 
 const dummyData: JobArray = [
     {
@@ -42,7 +32,7 @@ const Content = () => {
     return (
         <ContentWrapper>
             <NewJob></NewJob>
-            {dummyData.map(job => <h1>job</h1>)}
+            {dummyData.map(job => <Job job={job}>job</Job>)}
         </ContentWrapper>
     );
 }
