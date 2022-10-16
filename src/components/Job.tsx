@@ -1,9 +1,9 @@
 import { JobItem } from '../utils/Interfaces';
 
-const Job = (job: JobItem) => {
+const Job = ({ name, company, description, status, contacted, researched }: JobItem) => {
     return (
         <div>
-            {job.name}
+            {name}
         </div>
     );
 }

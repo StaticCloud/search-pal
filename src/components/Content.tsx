@@ -32,7 +32,7 @@ const Content = () => {
     return (
         <ContentWrapper>
             <NewJob></NewJob>
-            {dummyData.map(job => <Job job={job}>job</Job>)}
+            {dummyData.map(job => <Job {...job}/>)}
         </ContentWrapper>
     );
 }
