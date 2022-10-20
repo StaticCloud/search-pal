@@ -15,16 +15,16 @@ const dummyData: JobArray = [
         company: 'stuff',
         description: 'bar',
         status: 'applied',
-        contacted: false,
-        researched: false
+        contacted: true,
+        researched: true
     },
     {
         name: 'foo',
         company: 'valve',
         description: 'bar',
         status: 'rejected',
-        contacted: false,
-        researched: false
+        contacted: true,
+        researched: true
     }
 ]
 
